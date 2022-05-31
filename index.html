@@ -20,6 +20,15 @@
         <a href="/.auth/me">My Info</a>
       </div>
     </div>
+    <p>Loading content from the API: <b id="name">...</b></p>
+    
+    <script>
+      (async function() {
+          const { text } = await( await fetch(`/api/message`)).json();
+          document.querySelector('#name').textContent = text;
+      }())
+      </script>
+      
   </main>
 </body>
 
